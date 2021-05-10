@@ -5,10 +5,13 @@ import React from "react";
 import sortByData from "./sortByData";
 
 const Header = () => {
-  const { setSearchValue } = useGlobalContext();
+  const { setSearchValue, setSortBy } = useGlobalContext();
 
   const handleInputChange = (e) => {
     setSearchValue(e.target.value);
+  };
+  const handleOnSortSelect = (name) => {
+    setSortBy(name);
   };
 
   return (
@@ -18,7 +21,11 @@ const Header = () => {
           placeholder="Enter country name..."
           onChange={handleInputChange}
         />
-        <DropDown title="Sort by:" items={sortByData} />
+        <DropDown
+          title="Sort by:"
+          items={sortByData}
+          onSelect={handleOnSortSelect}
+        />
       </Form>
     </Nav>
   );

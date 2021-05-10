@@ -7,7 +7,7 @@ const Summary = () => {
   const url = "https://api.covid19api.com/summary";
   const [summaryData, setSummaryData] = useState({});
   const [isLoading, setIsLoading] = useState(false);
-  const { searchValue } = useGlobalContext();
+  const { searchValue, sortBy } = useGlobalContext();
 
   const getSummeryData = async () => {
     setIsLoading(true);
@@ -38,11 +38,47 @@ const Summary = () => {
           const regex = new RegExp(`^${searchValue}`, "gi");
           newCountry.hide =
             searchValue === "" ? false : !newCountry.Country.match(regex);
-          console.log(newCountry.Country.includes(searchValue));
           return newCountry;
         }),
       });
   }, [searchValue]);
+
+  useEffect(() => {
+    switch (sortBy) {
+      case "Confirmed":
+        setSummaryData({
+          ...summaryData,
+          Countries: summaryData.Countries.sort(
+            (a, b) => b.TotalConfirmed - a.TotalConfirmed
+          ),
+        });
+        break;
+      case "Deaths":
+        setSummaryData({
+          ...summaryData,
+          Countries: summaryData.Countries.sort(
+            (a, b) => b.TotalDeaths - a.TotalDeaths
+          ),
+        });
+        break;
+      case "Recovered":
+        setSummaryData({
+          ...summaryData,
+          Countries: summaryData.Countries.sort(
+            (a, b) => b.TotalRecovered - a.TotalRecovered
+          ),
+        });
+        break;
+      case "Name":
+        setSummaryData({
+          ...summaryData,
+          Countries: summaryData.Countries.sort(
+            (a, b) => b.Country < a.Country
+          ),
+        });
+        break;
+    }
+  }, [sortBy]);
 
   return (
     <Main>

@@ -1,8 +1,8 @@
 const sortByData = [
   { id: 1, name: "Name" },
-  { id: 3, name: "Confermed" },
-  { id: 2, name: "Deaths" },
-  { id: 3, name: "Recoverd" },
+  { id: 2, name: "Confirmed" },
+  { id: 3, name: "Deaths" },
+  { id: 4, name: "Recovered" },
 ];
 
 export default sortByData;

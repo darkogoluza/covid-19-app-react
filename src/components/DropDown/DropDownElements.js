@@ -14,6 +14,7 @@ export const Button = styled.button`
   border: 2px solid rgba(0, 0, 0, 0.25);
   padding: 0.5rem;
   border-radius: 5px;
+  font-size: 0.75em;
 
   outline: none;
 
@@ -35,12 +36,17 @@ export const List = styled.ul`
   width: 100%;
 `;
 
-export const Item = styled.li`
+export const Item = styled.button`
   padding: 0.25rem;
   list-style: none;
   display: flex;
   justify-content: space-between;
   background-color: #118ab2;
+
+  cursor: pointer;
+  border: none;
+  outline: none;
+  width: 100%;
 
   color: rgb(245, 248, 250);
 
