@@ -7,7 +7,7 @@ export const Nav = styled.nav`
   width: 100%;
 `;
 
-export const Form = styled.form`
+export const Form = styled.div`
   max-width: 600px;
   margin: auto;
   height: 100%;
@@ -26,24 +26,4 @@ export const Input = styled.input`
 
   border: none;
   outline: none;
-`;
-
-export const Button = styled.button`
-  padding: 0.5rem 1rem;
-  margin-left: 1rem;
-  border-radius: 0.5rem;
-
-  border: none;
-  outline: none;
-
-  cursor: pointer;
-  color: #faf3f3;
-  background-color: #a7bbc7;
-
-  transition: 0.2s all ease-in-out;
-
-  &:hover {
-    transform: scale(1.05);
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
-  }
 `;

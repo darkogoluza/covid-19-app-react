@@ -1,25 +1,20 @@
-import { Nav, Form, Input, Button } from "./HeaderElements";
-
+import { Nav, Form, Input } from "./HeaderElements";
+import { useGlobalContext } from "../../context";
 import React, { useState } from "react";
 
 const Header = () => {
-  const [inputValue, setInputValue] = useState("");
+  const { setSearchValue } = useGlobalContext();
 
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
-
-    // Handle search
+  const handleInputChange = (e) => {
+    setSearchValue(e.target.value);
   };
 
   return (
     <Nav>
-      <Form onSubmit={handleFormSubmit}>
+      <Form>
         <Input
           placeholder="Enter country name..."
-          value={inputValue}
-          onChange={(e) => {
-            setInputValue(e.target.value);
-          }}
+          onChange={handleInputChange}
         />
       </Form>
     </Nav>
