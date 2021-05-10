@@ -1,6 +1,8 @@
 import { Nav, Form, Input } from "./HeaderElements";
 import { useGlobalContext } from "../../context";
-import React, { useState } from "react";
+import DropDown from "../DropDown";
+import React from "react";
+import sortByData from "./sortByData";
 
 const Header = () => {
   const { setSearchValue } = useGlobalContext();
@@ -16,6 +18,7 @@ const Header = () => {
           placeholder="Enter country name..."
           onChange={handleInputChange}
         />
+        <DropDown title="Sort by:" items={sortByData} />
       </Form>
     </Nav>
   );

@@ -8,9 +8,9 @@ export const Nav = styled.nav`
 `;
 
 export const Form = styled.div`
-  max-width: 600px;
-  margin: auto;
+  max-width: 900px;
   height: 100%;
+  margin: auto;
   padding: 0 2rem;
   display: flex;
   align-items: center;
