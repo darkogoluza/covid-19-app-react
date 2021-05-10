@@ -3,11 +3,12 @@ import styled from "styled-components";
 export const Country = styled.li`
   list-style: none;
   width: 100%;
-  height: fit-content;
-  background: linear-gradient(to right, #a8ff78, #78ffd6);
+  height: 150px;
+  background-color: #e1e5ea;
   border-radius: 2rem;
   overflow: hidden;
   cursor: pointer;
+  display: flex;
 
   transition: 0.2s all ease-in-out;
 
@@ -18,13 +19,33 @@ export const Country = styled.li`
 `;
 
 export const Flag = styled.img`
-  width: 100%;
-  height: auto;
+  width: auto;
+  height: 100%;
   background-size: cover;
+  border-radius: 2rem;
+  margin-right: 1rem;
 `;
 
 export const Title = styled.h1`
   color: #1c1f3b;
   text-align: center;
-  font-size: 1em;
+  font-size: 1.5em;
+  padding-top: 1rem;
+  padding-bottom: 0.5rem;
+`;
+
+export const Stat = styled.h3`
+  text-align: left;
+  padding: 0.25rem 0;
+  font-size: 0.75em;
+  color: gray;
+
+  span {
+    color: #1c1f3b;
+    font-size: 0.85em;
+  }
+`;
+
+export const Info = styled.div`
+  flex-grow: 1;
 `;

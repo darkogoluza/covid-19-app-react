@@ -21,7 +21,6 @@ const Header = () => {
             setInputValue(e.target.value);
           }}
         />
-        <Button>Search</Button>
       </Form>
     </Nav>
   );
