@@ -1,7 +1,16 @@
 import React from "react";
+import GlobalStyle from "./globalStyles";
+import Header from "./components/Header";
+import Summary from "./components/Summary";
 
 const App = () => {
-  return <div>Covid-19</div>;
+  return (
+    <>
+      <GlobalStyle />
+      <Header />
+      <Summary />
+    </>
+  );
 };
 
 export default App;
