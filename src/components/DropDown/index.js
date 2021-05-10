@@ -31,6 +31,10 @@ const DropDown = ({ title = "", items = [], onSelect, defaultType }) => {
   };
 
   const handleGlobalClick = (e) => {
+    if (dropdown.current == null) return;
+
+    console.log(dropdown.current);
+
     if (!dropdown.current.contains(e.target)) {
       setIsOpen(false);
     }

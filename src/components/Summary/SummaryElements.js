@@ -11,4 +11,3 @@ export const SummaryList = styled.ul`
   align-items: center;
   justify-content: center;
 `;
-export const Loading = styled.section``;

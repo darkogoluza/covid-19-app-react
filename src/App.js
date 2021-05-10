@@ -1,14 +1,23 @@
 import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import GlobalStyle from "./globalStyles";
-import Header from "./components/Header";
-import Summary from "./components/Summary";
+import Home from "./pages/Home";
+import SingleCountry from "./pages/SingleCountry";
 
 const App = () => {
   return (
     <>
       <GlobalStyle />
-      <Header />
-      <Summary />
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/country/:slug">
+            <SingleCountry />
+          </Route>
+        </Switch>
+      </Router>
     </>
   );
 };

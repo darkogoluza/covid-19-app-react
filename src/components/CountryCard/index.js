@@ -1,5 +1,5 @@
 import React from "react";
-import { Country, Flag, Title, Info, Stat } from "./CountryCard";
+import { Country, Flag, Title, Info, Stat } from "./CountryCardElements";
 
 const CountryCard = ({
   Country: countryName,
@@ -7,9 +7,10 @@ const CountryCard = ({
   TotalConfirmed,
   TotalDeaths,
   TotalRecovered,
+  Slug,
 }) => {
   return (
-    <Country>
+    <Country to={`country/${Slug}`}>
       <Flag
         src={`https://purecatamphetamine.github.io/country-flag-icons/3x2/${CountryCode}.svg`}
       />

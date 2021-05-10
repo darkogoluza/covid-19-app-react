@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
-export const Country = styled.li`
+export const Country = styled(Link)`
   list-style: none;
   width: 100%;
   height: 150px;
@@ -9,6 +10,8 @@ export const Country = styled.li`
   overflow: hidden;
   cursor: pointer;
   display: flex;
+
+  text-decoration: none;
 
   transition: 0.2s all ease-in-out;
 

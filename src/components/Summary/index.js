@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { Main, SummaryList, Loading } from "./SummaryElements";
+import { Main, SummaryList } from "./SummaryElements";
 import CountryCard from "../CountryCard";
+import Loading from "../Loading";
 import { useGlobalContext } from "../../context";
 
 const Summary = () => {
@@ -44,6 +45,8 @@ const Summary = () => {
   }, [searchValue]);
 
   useEffect(() => {
+    if (!summaryData) return;
+
     switch (sortBy) {
       case "Confirmed":
         setSummaryData({
@@ -83,7 +86,7 @@ const Summary = () => {
   return (
     <Main>
       {isLoading ? (
-        <Loading>Loading...</Loading>
+        <Loading />
       ) : (
         <SummaryList>
           {summaryData.Countries &&
