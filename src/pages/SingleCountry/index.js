@@ -9,6 +9,7 @@ import {
 import Loading from "../../components/Loading";
 import Graph from "../../components/Graph";
 import { useParams } from "react-router-dom";
+import { animated, Spring } from "react-spring";
 
 const SingelCountry = () => {
   const [statusData, setStatusData] = useState([]);
@@ -105,24 +106,43 @@ const SingelCountry = () => {
         <CountryName>
           {statusData.length > 0 && statusData[0].Country}
         </CountryName>
-        <GraphsList>
-          <GraphContainer>
-            <Title>Confirmed Cases</Title>
-            <Graph data={getConfirmedData()} />
-          </GraphContainer>
-          <GraphContainer>
-            <Title>Recovered</Title>
-            <Graph data={getDeathsData()} />
-          </GraphContainer>
-          <GraphContainer>
-            <Title>Deaths</Title>
-            <Graph data={getConfirmedData()} />
-          </GraphContainer>
-          <GraphContainer>
-            <Title>ActiveCases</Title>
-            <Graph data={getActiveData()} />
-          </GraphContainer>
-        </GraphsList>
+        <Spring
+          from={{ opacity: 0, y: 80 }}
+          to={{ opacity: 1, y: 0 }}
+          config={{
+            duration: 200,
+            mass: 1,
+            tension: 170,
+            friction: 26,
+            clamp: false,
+            precision: 0.01,
+            velocity: 0,
+            easing: (t) => t,
+          }}
+        >
+          {(props) => (
+            <animated.div style={props}>
+              <GraphsList>
+                <GraphContainer>
+                  <Title>Confirmed Cases</Title>
+                  <Graph data={getConfirmedData()} />
+                </GraphContainer>
+                <GraphContainer>
+                  <Title>Recovered</Title>
+                  <Graph data={getDeathsData()} />
+                </GraphContainer>
+                <GraphContainer>
+                  <Title>Deaths</Title>
+                  <Graph data={getConfirmedData()} />
+                </GraphContainer>
+                <GraphContainer>
+                  <Title>ActiveCases</Title>
+                  <Graph data={getActiveData()} />
+                </GraphContainer>
+              </GraphsList>
+            </animated.div>
+          )}
+        </Spring>
       </>
     );
 };
