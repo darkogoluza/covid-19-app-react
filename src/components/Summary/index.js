@@ -45,7 +45,7 @@ const Summary = () => {
   }, [searchValue]);
 
   useEffect(() => {
-    if (!summaryData) return;
+    if (summaryData == null || summaryData.Countries == null) return;
 
     switch (sortBy) {
       case "Confirmed":
