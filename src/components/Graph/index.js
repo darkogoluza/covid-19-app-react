@@ -38,6 +38,9 @@ const MyResponsiveLine = ({ data /* see data tab */ }) => (
     pointColor={{ from: "color", modifiers: [] }}
     pointBorderWidth={2}
     pointBorderColor={{ from: "serieColor" }}
+    theme={{
+      textColor: "#bbb",
+    }}
     pointLabel="y"
     pointLabelYOffset={-12}
     enableArea={true}

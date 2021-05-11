@@ -5,7 +5,7 @@ export const Country = styled(Link)`
   list-style: none;
   width: 100%;
   height: 150px;
-  background-color: #e1e5ea;
+  background-color: ${(props) => props.theme.secundary};
   border-radius: 2rem;
   overflow: hidden;
   cursor: pointer;
@@ -30,7 +30,7 @@ export const Flag = styled.img`
 `;
 
 export const Title = styled.h1`
-  color: #1c1f3b;
+  color: ${(props) => props.theme.textPrimary};
   text-align: center;
   font-size: 1.5em;
   padding-top: 1rem;
@@ -41,10 +41,10 @@ export const Stat = styled.h3`
   text-align: left;
   padding: 0.25rem 0;
   font-size: 0.75em;
-  color: gray;
+  color: ${(props) => props.theme.textSecundary};
 
   span {
-    color: #1c1f3b;
+    color: ${(props) => props.theme.textPrimary};
     font-size: 0.85em;
   }
 `;

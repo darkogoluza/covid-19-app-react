@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Nav = styled.nav`
-  background-color: #e1e5ea;
+  background-color: ${(props) => props.theme.secundary};
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.15);
   height: 64px;
   width: 100%;
@@ -21,9 +21,30 @@ export const Input = styled.input`
   height: 42px;
   border-radius: 2rem;
   padding-left: 1rem;
-  color: #faf3f3;
-  background-color: #a7bbc7;
+  color: ${(props) => props.theme.background};
+  background-color: ${(props) => props.theme.primary};
 
   border: none;
   outline: none;
+`;
+
+export const ThemeButton = styled.button`
+  padding: 0.5rem 1rem;
+  background-color: ${(props) => props.theme.primary};
+  color: ${(props) => props.theme.background};
+  margin-right: 2rem;
+  border-radius: 0.5rem;
+
+  border: none;
+  outline: none;
+
+  cursor: pointer;
+
+  transition: 0.2s all ease-in-out;
+
+  &:hover {
+    background-color: transparent;
+    color: ${(props) => props.theme.primary};
+    border: 2px solid ${(props) => props.theme.primary};
+  }
 `;

@@ -16,6 +16,8 @@ export const Button = styled.button`
   border-radius: 5px;
   font-size: 0.75em;
 
+  color: ${(props) => props.theme.textPrimary};
+
   outline: none;
 
   cursor: pointer;
@@ -41,23 +43,23 @@ export const Item = styled.button`
   list-style: none;
   display: flex;
   justify-content: space-between;
-  background-color: #118ab2;
+  background-color: ${(props) => props.theme.primary};
+
+  color: ${(props) => props.theme.textPrimary};
 
   cursor: pointer;
   border: none;
   outline: none;
   width: 100%;
 
-  color: rgb(245, 248, 250);
-
   &:hover {
-    background-color: #073b4c;
+    filter: saturate(1.5);
   }
 
   &:nth-child(even) {
-    background-color: #127697;
+    background-color: ${(props) => props.theme.secundary};
     &:hover {
-      background-color: #073b4c;
+      filter: saturate(2);
     }
   }
 `;
